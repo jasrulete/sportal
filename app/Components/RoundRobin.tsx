@@ -27,17 +27,17 @@ interface RoundRobinProps {
     tournamentType: string;
 }
 
-const RoundRobin: React.FC<RoundRobinProps> = ({teamNames, listingId, currentUserId, listingOwnerId, tournamentDate, tournamentType}) => {
-  const [title, setTitle] = useState('');
+const RoundRobin: React.FC<RoundRobinProps> = ({ listingId, currentUserId, listingOwnerId, tournamentDate }) => {
+  // const [title, setTitle] = useState('');
   const tournamentHasStarted = new Date(tournamentDate) <= new Date();
-  const [teamsInput, setTeamsInput] = useState('');
+  // const [teamsInput, setTeamsInput] = useState('');
   const [teams, setTeams] = useState<string[]>([]);
   const [results, setResults] = useState<ResultsMap>({});
   const [modal, setModal] = useState<{ teamA: string, teamB: string, key: string, revKey: string } | null>(null);
   const [resetModal, setResetModal] = useState(false);
   const isOwner = currentUserId === listingOwnerId;
   const [matches, setMatches] = useState<Match[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const [isResetLoading, setIsResetLoading] = useState(false);
 
   const fetchMatches = async () => {
@@ -78,7 +78,8 @@ const RoundRobin: React.FC<RoundRobinProps> = ({teamNames, listingId, currentUse
 
   useEffect(() => {
     fetchMatches();
-  }, [listingId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [listingId]);  
 
   const generateTables = async () => {
     console.log("✅ Button clicked! Listing ID:", listingId);
@@ -102,8 +103,8 @@ const RoundRobin: React.FC<RoundRobinProps> = ({teamNames, listingId, currentUse
         });
 
         if (!deleteResponse.ok) {
-          const errorText = await deleteResponse.text();
-          console.error("❌ Failed to delete existing matches:", errorText);
+          // const errorText = await deleteResponse.text();
+          console.error("❌ Failed to delete existing matches:");
           toast.error("Failed to delete existing matches. Cannot regenerate.");
           return;
         }
@@ -122,7 +123,7 @@ const RoundRobin: React.FC<RoundRobinProps> = ({teamNames, listingId, currentUse
       console.log("🛰️ Response status:", response.status);
   
       if (!response.ok) {
-        const errorText = await response.text();
+        // const errorText = await response.text();
         toast.error("Failed to Generate Matches: Not Enough Teams");
         return;
       }      

@@ -28,10 +28,10 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
             currentQuery = qs.parse(params.toString());
         }
 
-        const updatedQuery: any = {
+        const updatedQuery: Record<string, string> = {
             ...currentQuery,
-            category:label
-        }
+            category: label,
+          };          
 
         if(params?.get('category') === label){
             delete updatedQuery.category;        

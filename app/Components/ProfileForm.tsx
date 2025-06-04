@@ -11,7 +11,23 @@ import {
   FaTimes,
 } from "react-icons/fa";
 
-export default function ProfileForm({ user }: { user: any }) {
+type User = {
+  name?: string;
+  email?: string;
+  bio?: string;
+  age?: string;
+  location?: string;
+  image?: string;
+  sport?: string;
+  team?: string;
+  level?: string;
+  // achievements?: string;
+  instagram?: string;
+  facebook?: string;
+  strava?: string;
+};
+
+export default function ProfileForm({ user }: { user: User }) {
   const [name, setName] = useState(user.name || "");
   const [bio, setBio] = useState(user.bio || "");
   const [age, setAge] = useState(user.age || "");
@@ -20,7 +36,7 @@ export default function ProfileForm({ user }: { user: any }) {
   const [sport, setSport] = useState(user.sport || "");
   const [team, setTeam] = useState(user.team || "");
   const [level, setLevel] = useState(user.level || "");
-  const [achievements, setAchievements] = useState(user.achievements || "");
+  // const [achievements, setAchievements] = useState(user.achievements || "");
   const [instagram, setInstagram] = useState(user.instagram || "");
   const [facebook, setFacebook] = useState(user.facebook || "");
   const [strava, setStrava] = useState(user.strava || "");
@@ -108,7 +124,7 @@ export default function ProfileForm({ user }: { user: any }) {
           sport,
           team,
           level,
-          achievements,
+          // achievements,
           instagram,
           facebook,
           strava,
