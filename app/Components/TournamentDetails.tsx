@@ -63,8 +63,6 @@ const TournamentDetails: React.FC<TournamentDetailsProps> = ({
     toast('Edit feature not implemented yet');
   };
 
-  console.log("Tournament Type:", listing.tournamentType);
-
   return (
     <Container>
       <div className="max-w-screen-lg mx-auto">
@@ -164,8 +162,7 @@ const TournamentDetails: React.FC<TournamentDetailsProps> = ({
               <SingleElim 
                 teams={teamNames}
                 listingId={listing.id}
-                currentUserId={currentUser?.id}
-                listingOwnerId={listing.user.id}
+                // Add other props if SingleElim needs data from TournamentDetails
               />
             )}
           </div>
