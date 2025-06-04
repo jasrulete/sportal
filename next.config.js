@@ -16,7 +16,9 @@ const nextConfig = {
     domains: ['images.unsplash.com', 'res.cloudinary.com'],
   },
   experimental: {
-    serverActions: true,
+    serverActions: {
+      allowedOrigins: ['localhost:3000', 'sportal.vercel.app'],
+    },
   }
 }
 

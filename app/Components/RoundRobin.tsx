@@ -37,7 +37,7 @@ const RoundRobin: React.FC<RoundRobinProps> = ({ listingId, currentUserId, listi
   const [resetModal, setResetModal] = useState(false);
   const isOwner = currentUserId === listingOwnerId;
   const [matches, setMatches] = useState<Match[]>([]);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [isResetLoading, setIsResetLoading] = useState(false);
 
   const fetchMatches = async () => {
