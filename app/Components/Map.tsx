@@ -4,9 +4,9 @@ import L from "leaflet";
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 
 import "leaflet/dist/leaflet.css";
-import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
-import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerShadow from "leaflet/dist/images/marker-shadow.png";
+import markerIcon2x from "public/images/marker-icon-2x.png";
+import markerIcon from "public/images/markerIcon.png";
+import markerShadow from "public/images/marker-shadow.png";
 
 // Fix for marker icons in production
 const icon = L.icon({
